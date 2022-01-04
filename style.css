@@ -13,8 +13,16 @@ main {
 }
 
 .container {
+    display: grid;
     border: 1px solid black;
     width: 500px;
     height: 500px;
 }
 
+.squares {
+    border: 0.5px solid black;
+}
+
+.nocolor {
+    background-color: blue;
+}
