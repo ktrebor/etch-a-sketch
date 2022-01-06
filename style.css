@@ -52,24 +52,12 @@ h1 {
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
     padding: 10px;
-    font-size: 20px;
-  }
+    font-size: 16px;
+    text-align: center;
+}
 
-.fa-github {
-    color: black;
-    font-size: 24px;
-    transition: all .2s ease-in-out;
-  }
-  
-.fa-github:hover {
-    transform: scale(1.1);
+a {
+ text-decoration: none;
+ color: rgb(0, 133, 18);
 }
