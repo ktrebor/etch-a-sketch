@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 * {
     margin: 0px;
     padding: 0px;
+    font-family: Inter, sans-serif;
 }
 
 main {
@@ -15,14 +17,59 @@ main {
 .container {
     display: grid;
     border: 1px solid black;
+    box-shadow: 5px 5px;
     width: 500px;
     height: 500px;
 }
 
 .squares {
-    border: 0.5px solid black;
+    border: 1px solid black;
 }
 
-.nocolor {
-    background-color: blue;
+.settings {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    
+}
+
+button {
+    border: 1px solid rgb(66, 66, 66);
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+    padding: 10px 20px;
+    background-color: white;
+    font-size: 16px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+.fa-github {
+    color: black;
+    font-size: 24px;
+    transition: all .2s ease-in-out;
+  }
+  
+.fa-github:hover {
+    transform: scale(1.1);
 }
