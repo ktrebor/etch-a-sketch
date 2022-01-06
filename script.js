@@ -1,15 +1,4 @@
 const container = document.querySelector(".container");
-const clear = document.querySelector("#clear");
-
-//on load execute the following functions:
-window.onload = () => {
-    generateSquares()
-}
-
-//Event Listeners
-clear.addEventListener('click', clearAll);
-
-//generate squares inside the container
 function generateSquares (size = 16) {
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -23,13 +12,38 @@ function generateSquares (size = 16) {
     }
 }
 
-//clear all collors 
-function clearAll () {
-    container.textContent = "";
-    generateSquares();
+function changeColor (e) {
+    let squareBackground = e.target.style;
+    if (color == "black") {
+        squareBackground.backgroundColor = "black";
+        return;
+    } else if (color == "rainbow") {
+        let rainbowColor = Math.floor(Math.random()*16777215).toString(16);
+        squareBackground.backgroundColor = "#" + rainbowColor;
+        
+        return;
+    } else if (color == "eraser") {
+        squareBackground.backgroundColor = "white";
+        return;
+    }
+    squareBackground.backgroundColor = color;    
 }
 
+function setColor (chooseColor = "black") {
+    color = chooseColor;
+}
 
-function changeColor (e) {
-    e.target.style.backgroundColor = "red";
+function clearAll () {
+    container.textContent = "";
+    let userSize = prompt("Please enter a number between 1 and 100:");
+    while (userSize < 1 || userSize > 100 || isNaN(userSize)) {
+        userSize = prompt("Enter a number between 1 and 100:");
+    }
+    generateSquares(userSize);
+}
+clear.addEventListener('click', clearAll);
+
+window.onload = () => {
+    generateSquares();
+    setColor();
 }
